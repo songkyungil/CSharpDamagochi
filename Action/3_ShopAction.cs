@@ -1,5 +1,6 @@
 ﻿using CSharpDamagochi.Interface;
 using CSharpDamagochi.Manager;
+using CSharpDamagochi.Table;
 using CSharpDamagochi.UI;
 using System;
 using System.Collections.Generic;
@@ -28,10 +29,13 @@ namespace CSharpDamagochi.Action
 
     public class Shop
     {
-        private readonly LocalData _localData = LocalData.Instance;
+       
+        private readonly LocalData _localData = LocalData.Instance; // 로컬데이터에서 필요한 데이터들 인스턴스로 생성함.
 
         public void VisitShop()
         {
+            
+
             Console.Clear();
             Console.WriteLine("===== 포켓몬 상점에 오신 것을 환영합니다! =====");
 
@@ -40,14 +44,14 @@ namespace CSharpDamagochi.Action
             while (isShopping)
             {
                 Console.Clear();
-                Console.WriteLine($"\n현재 소지금: {_localData.money}원");
-                Console.WriteLine($"몬스터볼 보유: {_localData.monsterBallCount}개");
+                Console.WriteLine($"\n현재 소지금: {_localData.inventory.mygold}원");
+                Console.WriteLine($"몬스터볼 보유: {_localData.inventory.Items[3].itemcount}개"); //인벤토리 3번째에 몬스터볼 정보 들어가있음
 
                 // 회복 아이템 보유량 표시
                 Console.WriteLine($"\n[회복 아이템]");
-                Console.WriteLine($"빨간포션: {_localData.redPotionCount}개 (체력 50 회복)");
-                Console.WriteLine($"고급빨간포션: {_localData.hyperPotionCount}개 (체력 100 회복)");
-                Console.WriteLine($"풀회복약: {_localData.fullRestoreCount}개 (전체 체력 회복)");
+                Console.WriteLine($"빨간포션: {_localData.inventory.Items[1].itemcount}개 (체력 50 회복)");
+                Console.WriteLine($"고급빨간포션: {_localData.inventory.Items[2].itemcount}개 (체력 100 회복)");
+                Console.WriteLine($"풀회복약: {_localData.inventory.Items[3].itemcount}개 (전체 체력 회복)");
 
                 if (_localData.selectPoketmon != null)
                 {
@@ -66,11 +70,19 @@ namespace CSharpDamagochi.Action
 
                 var choice = Input.SelectNumber();
 
+                // 7번을 누르니 key 값이 존재하지 않다고 해서 해당 구간 스킵처리해줌
+                if (choice == PurchaseManager.Instance.purchase.Count + 1)
+                {
+                    isShopping = false;
+                    continue;
+                }
+
                 var purchase = PurchaseManager.Instance.purchase[choice];
                 
                 if(purchase.Condition())
                 {
                     purchase.Buy();
+
                 }
             }
         }

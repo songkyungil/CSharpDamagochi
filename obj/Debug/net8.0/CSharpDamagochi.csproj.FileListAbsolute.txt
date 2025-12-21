@@ -12,3 +12,4 @@ C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\refi
 C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.pdb
 C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.genruntimeconfig.cache
 C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\ref\CSharpDamagochi.dll
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.sourcelink.json

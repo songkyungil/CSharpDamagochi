@@ -18,19 +18,19 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
-            LocalData.Instance.money -= Cost;
+            LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.selectPoketmon.maxHp += 50;
             LocalData.Instance.selectPoketmon.hp += 50; // 현재 체력도 증가
 
             Console.WriteLine($"최대 체력을 50 증가시켰습니다!");
             Console.WriteLine($"{LocalData.Instance.selectPoketmon.name}의 최대 체력: {LocalData.Instance.selectPoketmon.maxHp}");
-            Console.WriteLine($"남은 소지금: {LocalData.Instance.money}원");
+            Console.WriteLine($"남은 소지금: {LocalData.Instance.inventory.mygold}원");
         }
 
         public bool Condition()
         {
             if (LocalData.Instance.selectPoketmon == null) return false;
-            if (LocalData.Instance.money < Cost) return false;
+            if (LocalData.Instance.inventory.mygold < Cost) return false;
 
             return true;
         }
@@ -46,18 +46,18 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
-            LocalData.Instance.money -= Cost;
+            LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.selectPoketmon.atk += 5;
 
             Console.WriteLine($"공격력을 5 증가시켰습니다!");
             Console.WriteLine($"{LocalData.Instance.selectPoketmon.name}의 공격력: {LocalData.Instance.selectPoketmon.atk}");
-            Console.WriteLine($"남은 소지금: {LocalData.Instance.money}원");
+            Console.WriteLine($"남은 소지금: {LocalData.Instance.inventory.mygold}원");
         }
 
         public bool Condition()
         {
             if (LocalData.Instance.selectPoketmon == null) return false;
-            if (LocalData.Instance.money < Cost) return false;
+            if (LocalData.Instance.inventory.mygold < Cost) return false;
 
             return true;
         }
@@ -73,17 +73,17 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
-            LocalData.Instance.money -= Cost;
-            LocalData.Instance.monsterBallCount++;
+            LocalData.Instance.inventory.mygold -= Cost;
+            LocalData.Instance.inventory.Items[3].itemcount++;
 
             Console.WriteLine($"몬스터볼을 구매했습니다!");
-            Console.WriteLine($"현재 몬스터볼 보유 개수: {LocalData.Instance.monsterBallCount}");
-            Console.WriteLine($"남은 소지금: {LocalData.Instance.money}원");
+            Console.WriteLine($"현재 몬스터볼 보유 개수: {LocalData.Instance.inventory.Items[3].itemcount}");
+            Console.WriteLine($"남은 소지금: {LocalData.Instance.inventory.mygold}원");
         }
 
         public bool Condition()
         {
-            if (LocalData.Instance.money < Cost) return false;
+            if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
         }
     }
@@ -98,17 +98,17 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
-            LocalData.Instance.money -= Cost;
-            LocalData.Instance.redPotionCount++;
+            LocalData.Instance.inventory.mygold -= Cost;
+            LocalData.Instance.inventory.Items[0].itemcount++;
 
             Console.WriteLine("빨간포션을 구매했습니다!");
-            Console.WriteLine($"현재 빨간포션: {LocalData.Instance.redPotionCount}개");
-            Console.WriteLine($"남은 소지금: {LocalData.Instance.money}원");
+            Console.WriteLine($"현재 빨간포션: {LocalData.Instance.inventory.Items[0].itemcount}개");
+            Console.WriteLine($"남은 소지금: {LocalData.Instance.inventory.mygold}원");
         }
 
         public bool Condition()
         {
-            if (LocalData.Instance.money < Cost) return false;
+            if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
         }
     }
@@ -123,17 +123,17 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
-            LocalData.Instance.money -= Cost;
-            LocalData.Instance.hyperPotionCount++;
+            LocalData.Instance.inventory.mygold -= Cost;
+            LocalData.Instance.inventory.Items[1].itemcount++;
 
             Console.WriteLine("고급빨간포션을 구매했습니다!");
-            Console.WriteLine($"현재 고급빨간포션: {LocalData.Instance.hyperPotionCount}개");
-            Console.WriteLine($"남은 소지금: {LocalData.Instance.money}원");
+            Console.WriteLine($"현재 고급빨간포션: {LocalData.Instance.inventory.Items[1].itemcount}개");
+            Console.WriteLine($"남은 소지금: {LocalData.Instance.inventory.mygold}원");
         }
 
         public bool Condition()
         {
-            if (LocalData.Instance.money < Cost) return false;
+            if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
         }
     }
@@ -148,17 +148,17 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
-            LocalData.Instance.money -= Cost;
-            LocalData.Instance.fullRestoreCount++;
+            LocalData.Instance.inventory.mygold -= Cost;
+            LocalData.Instance.inventory.Items[2].itemcount++;
 
             Console.WriteLine("풀회복약을 구매했습니다!");
-            Console.WriteLine($"현재 풀회복약: {LocalData.Instance.fullRestoreCount}개");
-            Console.WriteLine($"남은 소지금: {LocalData.Instance.money}원");
+            Console.WriteLine($"현재 풀회복약: {LocalData.Instance.inventory.Items[2].itemcount}개");
+            Console.WriteLine($"남은 소지금: {LocalData.Instance.inventory.mygold}원");
         }
 
         public bool Condition()
         {
-            if (LocalData.Instance.money < Cost) return false;
+            if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
         }
     }

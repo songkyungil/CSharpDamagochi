@@ -34,13 +34,13 @@ namespace CSharpDamagochi.Data
         public string Name => "몬스터 볼";
         public string Description => "몬스터를 포획할 수 있습니다";
 
-        public int Amount => LocalData.Instance.monsterBallCount;
+        public int Amount => LocalData.Instance.inventory.Items[3].itemcount;
 
         public EItemType Type => EItemType.MonsterBall;
 
         public bool Condition()
         {
-            if (LocalData.Instance.monsterBallCount <= 0)
+            if (LocalData.Instance.inventory.Items[3].itemcount <= 0)
             {
                 Console.WriteLine("몬스터볼이 없습니다!");
                 return false;
@@ -61,8 +61,8 @@ namespace CSharpDamagochi.Data
         public void Use()
         {
 
-            LocalData.Instance.monsterBallCount--;
-            Console.WriteLine($"몬스터볼을 사용했습니다! (남은 개수: {LocalData.Instance.monsterBallCount})");
+            LocalData.Instance.inventory.Items[3].itemcount--;
+            Console.WriteLine($"몬스터볼을 사용했습니다! (남은 개수: {LocalData.Instance.inventory.Items[3].itemcount})");
 
             // 포획 확률 계산
             var captureRate = BattleManager.Instance.CalculateCaptureRate(_enemy);
@@ -115,14 +115,14 @@ namespace CSharpDamagochi.Data
         public string Name => "빨간 포션";
         public string Description => "체력 50 회복";
 
-        public int Amount => LocalData.Instance.redPotionCount;
+        public int Amount => LocalData.Instance.inventory.Items[0].itemcount;
 
 
         public EItemType Type => EItemType.Potion;
 
         public bool Condition()
         {
-            if (LocalData.Instance.redPotionCount <= 0)
+            if (LocalData.Instance.inventory.Items[0].itemcount <= 0)
             {
                 Console.WriteLine("빨간포션이 없습니다!");
                 return false;
@@ -133,7 +133,7 @@ namespace CSharpDamagochi.Data
 
         public void Use()
         {
-            LocalData.Instance.redPotionCount--;
+            LocalData.Instance.inventory.Items[0].itemcount--;
 
             int healAmount = 50;
             int originalHp = _poketmon.hp;
@@ -145,7 +145,7 @@ namespace CSharpDamagochi.Data
             int actualHeal = _poketmon.hp - originalHp; //현재체력에서 뺀만큼 실제 회복량
 
 
-            Console.WriteLine($"빨간포션을 사용했습니다! (남은 개수: {LocalData.Instance.redPotionCount})");
+            Console.WriteLine($"빨간포션을 사용했습니다! (남은 개수: {LocalData.Instance.inventory.Items[0].itemcount})");
             Console.WriteLine($"{_poketmon.name}의 체력이 {actualHeal}만큼 회복되었습니다.");
             Console.WriteLine($"현재 체력: {_poketmon.hp}/{_poketmon.maxHp}");
         }
@@ -166,13 +166,13 @@ namespace CSharpDamagochi.Data
 
         public string Description => "체력 100 회복";
 
-        public int Amount => LocalData.Instance.hyperPotionCount;
+        public int Amount => LocalData.Instance.inventory.Items[1].itemcount;
 
         public EItemType Type => EItemType.Potion;
 
         public bool Condition()
         {
-            if (LocalData.Instance.hyperPotionCount <= 0)
+            if (LocalData.Instance.inventory.Items[1].itemcount <= 0)
             {
                 Console.WriteLine("고급빨간포션이 없습니다!");
                 return false;
@@ -183,7 +183,7 @@ namespace CSharpDamagochi.Data
 
         public void Use()
         {
-            LocalData.Instance.hyperPotionCount--;
+            LocalData.Instance.inventory.Items[1].itemcount--;
 
             // 액션
             int healAmount = 100;
@@ -195,7 +195,7 @@ namespace CSharpDamagochi.Data
 
             int actualHeal = _poketmon.hp - originalHp;
 
-            Console.WriteLine($"고급빨간포션을 사용했습니다! (남은 개수: {LocalData.Instance.hyperPotionCount})");
+            Console.WriteLine($"고급빨간포션을 사용했습니다! (남은 개수: {LocalData.Instance.inventory.Items[1].itemcount})");
             Console.WriteLine($"{_poketmon.name}의 체력이 {actualHeal}만큼 회복되었습니다.");
             Console.WriteLine($"현재 체력: {_poketmon.hp}/{_poketmon.maxHp}");
         }
@@ -216,13 +216,13 @@ namespace CSharpDamagochi.Data
 
         public string Description => "체력을 모두 회복";
 
-        public int Amount => LocalData.Instance.fullRestoreCount;
+        public int Amount => LocalData.Instance.inventory.Items[2].itemcount;
 
         public EItemType Type => EItemType.Potion;
 
         public bool Condition()
         {
-            if (LocalData.Instance.fullRestoreCount <= 0)
+            if (LocalData.Instance.inventory.Items[2].itemcount <= 0)
             {
                 Console.WriteLine("풀회복약이 없습니다!");
                 return false;
@@ -240,7 +240,7 @@ namespace CSharpDamagochi.Data
 
         public void Use()
         {
-            LocalData.Instance.fullRestoreCount--;
+            LocalData.Instance.inventory.Items[2].itemcount--;
 
             // 액션
             int originalHp = _poketmon.hp;
@@ -248,7 +248,7 @@ namespace CSharpDamagochi.Data
             _poketmon.hp = _poketmon.maxHp;
             int actualHeal = _poketmon.hp - originalHp;
 
-            Console.WriteLine($"풀회복약을 사용했습니다! (남은 개수: {LocalData.Instance.fullRestoreCount})");
+            Console.WriteLine($"풀회복약을 사용했습니다! (남은 개수: {LocalData.Instance.inventory.Items[2].itemcount})");
             Console.WriteLine($"{_poketmon.name}의 체력이 완전히 회복되었습니다. (+{actualHeal})");
             Console.WriteLine($"현재 체력: {_poketmon.hp}/{_poketmon.maxHp}");
         }

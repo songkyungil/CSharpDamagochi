@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpDamagochi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a938ead4f84f6bf24f8d1dad3acab400a0f6534a")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpDamagochi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpDamagochi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
