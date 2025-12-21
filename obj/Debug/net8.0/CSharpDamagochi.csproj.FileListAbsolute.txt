@@ -1,0 +1,14 @@
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\bin\Debug\net8.0\CSharpDamagochi.exe
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\bin\Debug\net8.0\CSharpDamagochi.deps.json
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\bin\Debug\net8.0\CSharpDamagochi.runtimeconfig.json
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\bin\Debug\net8.0\CSharpDamagochi.dll
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\bin\Debug\net8.0\CSharpDamagochi.pdb
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.AssemblyInfoInputs.cache
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.AssemblyInfo.cs
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.csproj.CoreCompileInputs.cache
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.dll
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\refint\CSharpDamagochi.dll
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.pdb
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\CSharpDamagochi.genruntimeconfig.cache
+C:\Users\song\source\repos\CSharpDamagochi\CSharpDamagochi\obj\Debug\net8.0\ref\CSharpDamagochi.dll
