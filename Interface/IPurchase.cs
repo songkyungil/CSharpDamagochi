@@ -13,5 +13,6 @@ namespace CSharpDamagochi.Interface
         public int Cost { get; }
         public bool Condition();
         public void Buy();
+        
     }
 }

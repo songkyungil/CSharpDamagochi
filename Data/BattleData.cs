@@ -74,7 +74,11 @@ namespace CSharpDamagochi.Data
 
             var skillChoice = Input.SelectNumber(); // 스킬 선택할 수 있도록 입력받기  }
 
-            if (skillChoice > 0 && skillChoice <= _poketmon.skills.Count) return;
+            //이전 코드에서는 정상적동되는 코드를 바로 return 처리 시켜서 정상작동되지 않은 코드만 return 시켜줌
+            if (skillChoice <= 0 || skillChoice > _poketmon.skills.Count)
+            {
+                return;
+            }
 
             var skillKey = _poketmon.skills.Keys.ElementAt(skillChoice - 1); // ElementAt 함수는 매개변수에 있는 인덱스 순서대로 값 반환 
             var selectSkill = _poketmon.skills[skillKey];

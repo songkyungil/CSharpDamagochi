@@ -18,6 +18,7 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
+          
             LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.selectPoketmon.maxHp += 50;
             LocalData.Instance.selectPoketmon.hp += 50; // 현재 체력도 증가
@@ -34,6 +35,8 @@ namespace CSharpDamagochi.Data
 
             return true;
         }
+
+       
     }
 
     public class PurchaseAttack : IPurchase
@@ -46,6 +49,7 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
+            
             LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.selectPoketmon.atk += 5;
 
@@ -61,6 +65,8 @@ namespace CSharpDamagochi.Data
 
             return true;
         }
+
+   
     }
 
     public class PurchaseMonsterBall : IPurchase
@@ -73,6 +79,7 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
+            
             LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.inventory.Items[3].itemcount++;
 
@@ -86,6 +93,8 @@ namespace CSharpDamagochi.Data
             if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
         }
+
+  
     }
 
     public class PurchaseRedPotion : IPurchase
@@ -98,6 +107,7 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
+         
             LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.inventory.Items[0].itemcount++;
 
@@ -111,6 +121,8 @@ namespace CSharpDamagochi.Data
             if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
         }
+
+   
     }
 
     public class PurchaseHyperPotion : IPurchase
@@ -123,6 +135,7 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
+          
             LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.inventory.Items[1].itemcount++;
 
@@ -136,6 +149,8 @@ namespace CSharpDamagochi.Data
             if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
         }
+
+  
     }
 
     public class PurchaseFullRestore : IPurchase
@@ -148,6 +163,7 @@ namespace CSharpDamagochi.Data
 
         public void Buy()
         {
+            
             LocalData.Instance.inventory.mygold -= Cost;
             LocalData.Instance.inventory.Items[2].itemcount++;
 
@@ -160,6 +176,11 @@ namespace CSharpDamagochi.Data
         {
             if (LocalData.Instance.inventory.mygold < Cost) return false;
             return true;
+        }
+
+        public void NotBuy()
+        {
+            Console.WriteLine($"돈이 없어 구매가 불가합니다!");
         }
     }
 }

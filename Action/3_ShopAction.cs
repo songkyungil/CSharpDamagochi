@@ -70,19 +70,26 @@ namespace CSharpDamagochi.Action
 
                 var choice = Input.SelectNumber();
 
-                // 7번을 누르니 key 값이 존재하지 않다고 해서 해당 구간 스킵처리해줌
+                // 7번을 누르니 key 값이 존재하지 않다고 해서 해당 구간 탈출처리해줌
                 if (choice == PurchaseManager.Instance.purchase.Count + 1)
                 {
                     isShopping = false;
-                    continue;
+                    return;
                 }
-
+                // 딕셔너리배열 순서에 맞게 클래스들이 생성된다. -> 숫자입력 받아 주면 해당 클래스가 생성되는 구조임
                 var purchase = PurchaseManager.Instance.purchase[choice];
-                
-                if(purchase.Condition())
-                {
-                    purchase.Buy();
 
+                if (purchase.Condition())
+                {
+
+                    purchase.Buy();
+                }
+                else
+                {
+                    Console.WriteLine("\n돈이 부족합니다!");
+                    Console.WriteLine("\n엔터를 누르면 이전메뉴로 돌아갑니다!");
+                    Console.ReadKey(); // 반복문에서 계속 실행되는  Console.Clear(); 를 처리해주기 위해서 프로그램 일시정지인 ReadKey() 기능 사용
+                    return; // 해당 반복문 탈출
                 }
             }
         }
