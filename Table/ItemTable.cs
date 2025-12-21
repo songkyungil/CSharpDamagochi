@@ -8,5 +8,6 @@ namespace CSharpDamagochi.Table
 {
     public class ItemTable
     {
+
     }
 }
