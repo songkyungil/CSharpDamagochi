@@ -1,16 +1,8 @@
-﻿using CSharpDamagochi.Action;
+﻿
 using CSharpDamagochi.Interface;
 using CSharpDamagochi.Manager;
-using CSharpDamagochi.Poketmon;
-using CSharpDamagochi.Table;
 using CSharpDamagochi.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
+
 
 namespace CSharpDamagochi.Data
 {

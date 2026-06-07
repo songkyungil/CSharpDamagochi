@@ -1,9 +1,8 @@
 ﻿using CSharpDamagochi.DesignPattern;
 using CSharpDamagochi.Inventory;
-using CSharpDamagochi.Item;
+
 using CSharpDamagochi.Poketmon;
-using CSharpDamagochi.Table;
-using System.Collections.Generic;
+
 
 public class LocalData : Singleton<LocalData>
 {

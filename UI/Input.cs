@@ -13,7 +13,7 @@ namespace CSharpDamagochi.UI
             Console.Write("선택:");
             return Console.ReadLine().ToInt32();
         }
-
+        
         public static string SelectText()
         {
             Console.Write("입력:");

@@ -1,12 +1,7 @@
 ﻿using CSharpDamagochi.Interface;
-using CSharpDamagochi.Poketmon;
+
 using CSharpDamagochi.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static CSharpDamagochi.Action.CheckPokemonAction;
+
 
 namespace CSharpDamagochi.Action
 {
