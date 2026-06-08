@@ -8,6 +8,7 @@ namespace CSharpDamagochi.Program
     {
         public static void Main()
         {
+            Console.WriteLine("CI/CD TEST");
             GameManager.Instance.Init();
             PurchaseManager.Instance.Init();
             ItemManager.Instance.Init();
